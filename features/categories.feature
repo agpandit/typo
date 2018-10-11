@@ -1,3 +1,5 @@
+# New cucumber feature and script to test create,save,edit and update category
+# Existing steps were re-used
 Feature: Create and Save Categories
   As an blog administrator
   In order to share my thoughts to the world
@@ -7,7 +9,7 @@ Feature: Create and Save Categories
     Given the blog is set up
     And I am logged into the admin panel
 
-  Scenario: Successfully create categories
+  Scenario: Successfully create,save,edit and update categories
     Given I am on the new categories page
         When I fill in "category_name" with "Education"
         And I fill in "category_keywords" with "Graduate"
@@ -18,7 +20,7 @@ Feature: Create and Save Categories
         Then I should see "Graduate"
         Then I should see "Education_link"
         Then I should see "Lets Learn"
-    
+      
         Then I follow "Education"
         And I fill in "category_name" with "Sports"
         And I fill in "category_keywords" with "cricket,tenis"
